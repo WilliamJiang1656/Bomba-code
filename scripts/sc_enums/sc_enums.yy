@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_enums",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_enums",
+  "parent":{
+    "name":"Bomba",
+    "path":"Bomba.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

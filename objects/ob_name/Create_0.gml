@@ -1,0 +1,27 @@
+//self, right, top right, top left, leftt
+names = [];
+is_turn = [0,0,0,0,0];
+is_landlord = [0,0,0,0,0];
+is_teammate = [0,0,0,0,0];
+var num_id = global.player_id;
+for (var i = 0; i < 5; ++i) {
+	array_push(names,global.player_names[num_id]);
+	num_id = (num_id + 1) % 5;
+}
+pfp_width = 128;
+
+locations = [
+	[32, 736, 32+string_width(names[0]), 736+string_height(names[0])],
+	[1344-string_width(names[1]), 448, 1344, 448+string_height(names[1])],
+	[960, 0, 960+string_width(names[2]), 0+string_height(names[2])],
+	[320, 0, 320+string_width(names[3]), 0+string_height(names[3])],
+	[32, 448, 32+string_width(names[4]), 448+string_height(names[4])]
+];
+
+locations_pfp = [
+	[32, 608],
+	[1216, 320],
+	[832, 0],
+	[192, 0],
+	[32, 320]
+];

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_resize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_resize",
+  "parent":{
+    "name":"Bomba",
+    "path":"Bomba.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

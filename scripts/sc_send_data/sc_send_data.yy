@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_send_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_send_data",
+  "parent":{
+    "name":"Bomba",
+    "path":"Bomba.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
