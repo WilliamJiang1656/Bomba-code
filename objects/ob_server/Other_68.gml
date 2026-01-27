@@ -167,7 +167,6 @@ if (_type == network_type_data) {
 		last_play_id        = real(_data.last_play_id);
 		landlord_points     = real(_data.landlord_points);
 		peasant_points      = real(_data.peasant_points);
-		show_message(global.turn)
 	
 	}
 }

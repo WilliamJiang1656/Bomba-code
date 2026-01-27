@@ -5,7 +5,6 @@ if (room == rm_game) {
 		bottom_cards: start_bottom_cards,
 		flip_id: start_flip_id,
 		flip_card: start_flip_card,
-		played_cards: start_played_cards,
 		table_combo: start_table_combo
 	}
     cardhandler  = instance_create_layer(0, 0, "Instances", ob_cardhandler, init);
@@ -18,6 +17,7 @@ if (room == rm_game) {
 		cardhandler.bottom_flip();
 		namehandler.is_landlord[(global.landlord_id[0] - global.player_id + 5) % 5] = true;
 		if (global.landlord_id[1] == global.player_id) namehandler.is_teammate[0] = true;
+		cardhandler.draw_cards(start_played_cards,false);
 	}
 
 }
