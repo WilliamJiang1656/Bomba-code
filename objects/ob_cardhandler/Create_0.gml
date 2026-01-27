@@ -7,6 +7,7 @@ card_width = sprite_get_width(sp_red);
 card_height = sprite_get_height(sp_red);
 bottom_cards_ob = [];
 hand_groups = [];
+played_cards = [];
 card = noone;
 orig_x = 0;
 orig_y = 0;
