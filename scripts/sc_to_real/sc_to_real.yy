@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_to_real",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_to_real",
+  "parent":{
+    "name":"Bomba",
+    "path":"Bomba.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

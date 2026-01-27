@@ -18,6 +18,5 @@ if (_id == msg_id) {
         };
 
         send_data(_join_packet);
-        room_goto(rm_lobby);
     }
 }

@@ -6,6 +6,7 @@ global.play_pressed = false;
 global.take_pressed = false;
 global.group_pressed = false;
 global.ungroup_pressed = false;
+start = false;
 global.player_names = ["William","Tony","Phillip","Kai","Andrew"]
 global.turn = undefined;
 last_play_id = undefined;

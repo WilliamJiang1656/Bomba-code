@@ -55,6 +55,7 @@ if (_type == network_type_data) {
 	}
 	else if (_data.header == "WELCOME") {
         global.player_id = _data.assigned_id;
+		start = _data.start;
     }
 	else if (_data.header == "LOG") {
 		array_push(global.log, global.player_names[_data.sender] + ": " + _data.message);
@@ -65,7 +66,7 @@ if (_type == network_type_data) {
 	    array_push(global.log, _data.name + " joined the game!");
 		
 		if (global.player_id == _data.sender) {
-			if (_data.start) room_goto(rm_game);
+			if (start) room_goto(rm_game);
 			else room_goto(rm_lobby);
 		}
 
@@ -152,22 +153,21 @@ if (_type == network_type_data) {
 	else if (_data.header == "REJOIN") {	
 		start_flip_card = undefined;
 		start_flip_id = undefined;
-		start_bottom_cards = _data.bottom_cards;
-		start_hand = _data.hand;
-		start_played_cards = _data.played_cards;
-		start_table_combo = _data.table_combo;
 		
-		global.landlord_id = _data.landlord;
-
-
-		exit_order = _data.exit_order;
-
+		start_bottom_cards = to_real(_data.bottom_cards);
+		start_hand = to_real(_data.hand);
+		start_played_cards = to_real(_data.played_cards);
+		start_table_combo = to_real(_data.combo);
+		
+		global.landlord_id = to_real(_data.landlord);
+		exit_order = to_real(_data.exit_order);
 		
 		// single nums
 		global.turn         = real(_data.turn);
 		last_play_id        = real(_data.last_play_id);
 		landlord_points     = real(_data.landlord_points);
 		peasant_points      = real(_data.peasant_points);
+		show_message(global.turn)
 	
 	}
 }
