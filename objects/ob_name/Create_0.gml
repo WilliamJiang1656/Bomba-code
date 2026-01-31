@@ -2,6 +2,8 @@
 names = [];
 is_turn = [0,0,0,0,0];
 is_landlord = [0,0,0,0,0];
+exit_order = [0,0,0,0,0];
+exit_size = [[0,0],[0,0],[0,0],[0,0],[0,0]]
 
 var num_id = global.player_id;
 for (var i = 0; i < 5; ++i) {
@@ -35,4 +37,13 @@ repeat(global.player_id) {
     array_delete(locations_pfp, 4, 1);
     
     array_insert(locations_pfp, 0, last_val);
+}
+
+update_exit_order = function(arr) {
+	for (var i = 0; i < array_length(arr); ++i) {
+		if (exit_order[arr[i]] > 0) continue;
+		exit_order[arr[i]] = i+1;
+		exit_size[arr[i]][0] = string_width(string(i+1));
+		exit_size[arr[i]][1] = string_height(string(i+1));
+	}
 }

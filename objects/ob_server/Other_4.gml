@@ -25,6 +25,7 @@ if (room == rm_game) {
 			if (global.landlord_id[1] == global.player_id) namehandler.is_landlord[global.player_id] = true;
 		}
 		cardhandler.draw_cards(start_played_cards,false);
+		namehandler.update_exit_order(exit_order);
 	}
 
 }

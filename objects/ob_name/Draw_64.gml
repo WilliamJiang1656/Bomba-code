@@ -10,4 +10,9 @@ for(var i = 0; i < 5; ++i) {
    
     var pfp_col = (is_landlord[i]) ? c_red : c_black;
     draw_sprite_ext(sp_white, 0, loc_pfp[0], loc_pfp[1], pfp_width, pfp_width, 0, pfp_col, 1);
+	
+	if (exit_order[i] > 0) {
+		draw_sprite_ext(sp_white, 0, loc_pfp[0]-exit_size[i][0], loc_pfp[1], exit_size[i][0], exit_size[i][1], 0, c_black, 1);
+		draw_text_color(loc_pfp[0]-exit_size[i][0], loc_pfp[1], exit_order[i], c_white, c_white, c_white, c_white, 1);
+	}
 }

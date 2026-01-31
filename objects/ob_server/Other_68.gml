@@ -129,25 +129,28 @@ if (_type == network_type_data) {
 		array_push(exit_order, _data.sender);
 		
 		last_play_id = skip_exited(last_play_id);
+		namehandler.update_exit_order(exit_order)
 		
 		if (array_contains(global.landlord_id, _data.sender))
 			landlord_points += (5-array_length(exit_order));
 		else peasant_points += (5-array_length(exit_order));
 		
 		array_push(global.log, global.player_names[_data.sender] + " exited");
-		if (landlord_points >= 5) {
-			array_push(global.log, "Landlords win");
-			room_goto(rm_lobby);
-		}
-		else if (peasant_points >= 6) {
-			array_push(global.log, "Peasants win");
-			room_goto(rm_lobby);
-		}
+		if (landlord_points >= 5 || peasant_points >= 6){
+			if (landlord_points >= 5) {
+				array_push(global.log, "Landlords win");
+				room_goto(rm_lobby);
+			}
+			else if (peasant_points >= 6) {
+				array_push(global.log, "Peasants win");
+				room_goto(rm_lobby);
+			}
 		
-		var _lobby_packet = {
-	        header: "LOBBY",
-	    };
-	    send_data(_lobby_packet);
+			var _lobby_packet = {
+		        header: "LOBBY",
+		    };
+		    send_data(_lobby_packet);
+		}
 	}
 	else if (_data.header == "REJOIN") {	
 		start_flip_card = undefined;
