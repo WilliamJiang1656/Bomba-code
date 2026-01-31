@@ -7,6 +7,7 @@ card_width = sprite_get_width(sp_red);
 card_height = sprite_get_height(sp_red);
 bottom_cards_ob = [];
 hand_groups = [];
+played_cards = [];
 card = noone;
 orig_x = 0;
 orig_y = 0;
@@ -75,19 +76,7 @@ cardarray_to_bucket = function(arr){
 	for (var i = 0; i < array_length(arr); ++i) {
 	    var card = arr[i];
 	    var val = card[0]; // enum Val
-	    var suit = card[1]; // enum Suit
-
-	    // normal cards
-	    if (val >= Val.THREE && val <= Val.TWO) {
-	        array_push(buckets[val], card);
-	    }
-	    // jokers
-	    else if (val == Val.BLACK_JOKER) {
-	        array_push(buckets[Val.BLACK_JOKER], card);
-	    }
-	    else if (val == Val.RED_JOKER) {
-	        array_push(buckets[Val.RED_JOKER], card);
-	    }
+	    array_push(buckets[val], card);
 	}
 	return buckets;
 }
@@ -266,18 +255,6 @@ bottom_flip = function() {
 	for (var i = 0; i < 3; ++i) {
 		bottom_cards_ob[i].flip = false;
 		bottom_cards_ob[i].sprite_index = bottom_cards_ob[i].suit;
-	}
-}
-
-find_teammate = function(arr) {
-	for (var i = 0; i < array_length(hand); ++i) {
-		if (string(hand[i]) == string(arr)) {
-			var _found_teammate_packet = {
-				header: "FOUND_TEAMMATE",
-			};
-			send_data(_found_teammate_packet);
-			break;
-		}
 	}
 }
 
