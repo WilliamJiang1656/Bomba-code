@@ -91,7 +91,6 @@ if (_type == network_type_data) {
 		array_push(global.landlord_id, _data.sender);
 		array_push(global.log, global.player_names[global.landlord_id[0]] + " is the landlord");
 		toggle_button(-1,-1);
-		landlord_phase = false;
 		cardhandler.bottom_flip();
 		namehandler.is_landlord[(_data.sender - global.player_id + 5) % 5] = true;
 	}
@@ -104,6 +103,7 @@ if (_type == network_type_data) {
 	else if (_data.header == "FOUND_TEAMMATE") {
 		array_push(global.landlord_id, _data.sender);
 		if (_data.sender == global.player_id) namehandler.is_teammate[0] = true;
+		landlord_phase = false;
 	}
 	else if (_data.header == "START_GAME") {
 		room_goto(rm_game);
@@ -167,6 +167,8 @@ if (_type == network_type_data) {
 		last_play_id        = real(_data.last_play_id);
 		landlord_points     = real(_data.landlord_points);
 		peasant_points      = real(_data.peasant_points);
+		
+		landlord_phase = bool(_data.landlord_phase);
 	
 	}
 }

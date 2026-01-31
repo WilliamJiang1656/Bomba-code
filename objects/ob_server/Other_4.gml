@@ -10,7 +10,7 @@ if (room == rm_game) {
     cardhandler  = instance_create_layer(0, 0, "Instances", ob_cardhandler, init);
 	namehandler  = instance_create_layer(0, 0, "Instances", ob_name);
 	namehandler.is_turn[(global.turn - global.player_id + 5) % 5] = true;
-	toggle_button(global.turn, 2);
+	if (landlord_phase) toggle_button(global.turn, 2);
 	
 	//rejoin initialization
 	if (is_undefined(start_flip_card)) {
