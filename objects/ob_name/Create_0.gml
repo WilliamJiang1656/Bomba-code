@@ -2,7 +2,7 @@
 names = [];
 is_turn = [0,0,0,0,0];
 is_landlord = [0,0,0,0,0];
-is_teammate = [0,0,0,0,0];
+
 var num_id = global.player_id;
 for (var i = 0; i < 5; ++i) {
 	array_push(names,global.player_names[num_id]);
@@ -25,3 +25,14 @@ locations_pfp = [
 	[192, 0],
 	[32, 320]
 ];
+
+repeat(global.player_id) {
+    var last_val = locations[4];
+    array_delete(locations, 4, 1);
+    array_insert(locations, 0, last_val);
+
+    last_val = locations_pfp[4];
+    array_delete(locations_pfp, 4, 1);
+    
+    array_insert(locations_pfp, 0, last_val);
+}

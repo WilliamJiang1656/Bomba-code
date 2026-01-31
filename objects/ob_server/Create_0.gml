@@ -59,12 +59,14 @@ delete_button = function(button_id) {
 }
 
 skip_exited = function(val) {
-	namehandler.is_turn[(val - global.player_id + 5) % 5] = false;
+	//namehandler.is_turn[(val - global.player_id + 5) % 5] = false;
+	namehandler.is_turn[val] = false;
 	val = (val + 1) % 5;
 	while (array_contains(exit_order, val)) {
         val = (val + 1) % 5;
     }
-	namehandler.is_turn[(val - global.player_id + 5) % 5] = true;
+	//namehandler.is_turn[(val - global.player_id + 5) % 5] = true;
+	namehandler.is_turn[val] = true;
 	return val;
 }
 
