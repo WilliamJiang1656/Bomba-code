@@ -51,7 +51,6 @@
     {"id":{"name":"sc_enums","path":"scripts/sc_enums/sc_enums.yy",},},
     {"id":{"name":"sc_resize","path":"scripts/sc_resize/sc_resize.yy",},},
     {"id":{"name":"sc_send_data","path":"scripts/sc_send_data/sc_send_data.yy",},},
-    {"id":{"name":"sc_to_real","path":"scripts/sc_to_real/sc_to_real.yy",},},
     {"id":{"name":"sp_arrow","path":"sprites/sp_arrow/sp_arrow.yy",},},
     {"id":{"name":"sp_bj","path":"sprites/sp_bj/sp_bj.yy",},},
     {"id":{"name":"sp_blue","path":"sprites/sp_blue/sp_blue.yy",},},

@@ -98,7 +98,6 @@ if (_type == network_type_data) {
 		array_push(global.log, "3 " + global.suit_to_string[_data.teammate[1]] + " with "
 		+ global.back_to_string[_data.teammate[2]] + " back is the teammate");
 		toggle_button(global.turn,1);
-		cardhandler.find_teammate(_data.teammate);
 	}
 	else if (_data.header == "FOUND_TEAMMATE") {
 		array_push(global.landlord_id, _data.sender);
@@ -113,10 +112,10 @@ if (_type == network_type_data) {
 		start_hand = _data.hand;
 		start_played_cards = [];
 		start_table_combo = [Combo.NO_COMBO, Val.THREE, 0, 0];
-		global.turn = _data.flip_id;
-		array_push(global.log, global.player_names[_data.flip_id] + " got the flipped card " 
-		+ global.val_to_string[_data.flip_card[0]] + " " + global.suit_to_string[_data.flip_card[1]] 
-		+ " with " + global.back_to_string[_data.flip_card[2]] + " back");
+		global.turn = start_flip_id
+		array_push(global.log, global.player_names[start_flip_id] + " got the flipped card " 
+		+ global.val_to_string[start_flip_card[0]] + " " + global.suit_to_string[start_flip_card[1]] 
+		+ " with " + global.back_to_string[start_flip_card[2]] + " back");
 
 		landlord_phase = true;
 		
@@ -154,21 +153,20 @@ if (_type == network_type_data) {
 		start_flip_card = undefined;
 		start_flip_id = undefined;
 		
-		start_bottom_cards = to_real(_data.bottom_cards);
-		start_hand = to_real(_data.hand);
-		start_played_cards = to_real(_data.played_cards);
-		start_table_combo = to_real(_data.combo);
+		start_bottom_cards = _data.bottom_cards;
+		start_hand = _data.hand;
+		start_played_cards = _data.played_cards;
+		start_table_combo = _data.combo;
 		
-		global.landlord_id = to_real(_data.landlord);
-		exit_order = to_real(_data.exit_order);
+		global.landlord_id = _data.landlord;
+		exit_order = _data.exit_order;
 		
 		// single nums
-		global.turn         = real(_data.turn);
-		last_play_id        = real(_data.last_play_id);
-		landlord_points     = real(_data.landlord_points);
-		peasant_points      = real(_data.peasant_points);
+		global.turn = _data.turn;
+		last_play_id = _data.last_play_id;
+		landlord_points = _data.landlord_points;
+		peasant_points = _data.peasant_points;
 		
-		landlord_phase = bool(_data.landlord_phase);
-	
+		landlord_phase = _data.landlord_phase;	
 	}
 }
