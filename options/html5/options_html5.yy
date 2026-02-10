@@ -1,6 +1,11 @@
 {
   "$GMHtml5Options":"",
   "%Name":"HTML5",
+  "ConfigValues":{
+    "test":{
+      "option_html5_version":"1.0.0.4",
+    },
+  },
   "name":"HTML5",
   "option_html5_allow_fullscreen":true,
   "option_html5_browser_title":"Bomba",

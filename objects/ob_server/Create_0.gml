@@ -23,7 +23,7 @@ network_socket = network_create_socket(network_socket_wss);
 network_set_config(network_config_connect_timeout, 5000);
 
 // 4. IMPORTANT: The domain MUST NOT have any slashes or protocols
-var url = "bomba-production-2c95.up.railway.app"; 
+var url = "previous-kinna-bombaboys-48c33a4c.koyeb.app"; 
 
 // 5. Use the RAW async connect
 // We use 443 because PieSocket proved that's where the WSS lives
