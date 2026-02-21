@@ -1,7 +1,7 @@
 if (global.play_pressed) {
 	global.play_pressed = false;
 	if (array_length(hand_selected) == 0) return;
-	
+	//[combo, highest val, length, throwaway]
 	combo = find_combo();
 	
 	var is_start_play   = (table_combo[0] == Combo.NO_COMBO && combo[0] != Combo.NO_COMBO);
@@ -9,13 +9,15 @@ if (global.play_pressed) {
 	
 	var table_has_bomb  = (table_combo[0] == Combo.BOMB || table_combo[0] == Combo.ROCKET);
 	var play_is_bomb    = (combo[0] == Combo.BOMB || combo[0] == Combo.ROCKET);
-
+	
 	//bomb
 	var bomb_over_normal = (!table_has_bomb && play_is_bomb);
-	var rocket_over_bomb = (table_combo[0] == Combo.BOMB && combo[0] == Combo.ROCKET);
+	var rocket_over_bomb = (table_combo[0] == Combo.BOMB && combo[0] == Combo.ROCKET && combo[2] == 4);
 	var big_bomb_over_rocket = (table_combo[0] == Combo.ROCKET && combo[0] == Combo.BOMB && combo[2] >= 5);
+	var bigger_bomb_over_bomb = (combo[0] == Combo.BOMB && table_combo[0] == Combo.BOMB && combo[2] > table_combo[2]);
 
-	if (is_start_play || is_higher_value || bomb_over_normal || rocket_over_bomb || big_bomb_over_rocket) {
+
+	if (is_start_play || is_higher_value || bomb_over_normal || rocket_over_bomb || big_bomb_over_rocket || bigger_bomb_over_bomb) {
 		hand_selected = sort_cards(hand_selected, false);
 		var _card_packet = {
 			header: "PLAY_CARDS",
