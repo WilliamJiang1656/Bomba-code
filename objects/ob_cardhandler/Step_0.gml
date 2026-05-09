@@ -12,7 +12,7 @@ if (global.play_pressed) {
 	
 	//bomb
 	var bomb_over_normal = (!table_has_bomb && play_is_bomb);
-	var rocket_over_bomb = (table_combo[0] == Combo.BOMB && combo[0] == Combo.ROCKET && combo[2] == 4);
+	var rocket_over_bomb = (table_combo[0] == Combo.BOMB && combo[0] == Combo.ROCKET && table_combo[2] == 4);
 	var big_bomb_over_rocket = (table_combo[0] == Combo.ROCKET && combo[0] == Combo.BOMB && combo[2] >= 5);
 	var bigger_bomb_over_bomb = (combo[0] == Combo.BOMB && table_combo[0] == Combo.BOMB && combo[2] > table_combo[2]);
 
