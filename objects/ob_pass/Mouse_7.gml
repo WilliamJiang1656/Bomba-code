@@ -5,4 +5,5 @@ if (pressed){
 		header: "PASS",
 	};
 	send_data(_pass_packet);
+	instance_destroy()
 }
