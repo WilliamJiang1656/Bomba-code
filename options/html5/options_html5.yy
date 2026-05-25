@@ -33,7 +33,7 @@
   "option_html5_usebuiltinparticles":true,
   "option_html5_usesplash":true,
   "option_html5_use_facebook":false,
-  "option_html5_version":"1.0.0.5",
+  "option_html5_version":"1.0.0.6",
   "option_html5_webgl":2,
   "resourceType":"GMHtml5Options",
   "resourceVersion":"2.0",

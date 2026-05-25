@@ -31,7 +31,7 @@ if (_type == network_type_data) {
 		cardhandler.table_combo = _data.combo;
 		
 		//uno
-		if (_data.card_amt == 1)
+		if ((_data.cards_amt-1) == 1)
 			array_push(global.log, global.player_names[_data.sender] + " is uno");
 		
 		// exiting

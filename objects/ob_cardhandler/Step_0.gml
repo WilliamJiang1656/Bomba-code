@@ -23,7 +23,7 @@ if (global.play_pressed) {
 			header: "PLAY_CARDS",
 			cards: hand_selected,
 			combo: combo,
-			card_amt: card_amt
+			cards_amt: cards_amt
 		};
 		send_data(_card_packet);
 		
