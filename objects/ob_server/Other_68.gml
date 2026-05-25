@@ -25,6 +25,10 @@ if (_type == network_type_data) {
 		
 		cardhandler.table_combo = _data.combo;
 		
+		//uno
+		if (_data.card_amt == 1)
+			array_push(global.log, global.player_names[_data.sender] + " is uno");
+		
 		// exiting
 		if (array_length(cardhandler.hand) + array_length(cardhandler.hand_groups)== 0 && _data.sender == global.player_id) {
 			var _exit_packet = {

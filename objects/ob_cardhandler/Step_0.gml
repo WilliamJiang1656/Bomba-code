@@ -22,7 +22,8 @@ if (global.play_pressed) {
 		var _card_packet = {
 			header: "PLAY_CARDS",
 			cards: hand_selected,
-			combo: combo
+			combo: combo,
+			card_amt: card_amt
 		};
 		send_data(_card_packet);
 		

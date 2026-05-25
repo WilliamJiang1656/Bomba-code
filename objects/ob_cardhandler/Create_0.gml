@@ -12,6 +12,7 @@ card = noone;
 orig_x = 0;
 orig_y = 0;
 card_info = {cardhandler: id};
+cards_amt = 0
 
 //bottom card vars
 scale = 0.75;
@@ -272,6 +273,14 @@ refresh_hand_display = function() {
 	
 	hand_selected = [];
 	draw_cards(hand_sorted,true);
+	
+	// count cards amt
+	var cards_amt_group = 0
+	for (var i = 0; i < array_length(hand_groups); ++i) {
+		cards_amt_group += array_length(hand_groups[i])
+	}
+	cards_amt = cards_amt_group + array_length(hand)
+	
 }
 
 refresh_hand_display();

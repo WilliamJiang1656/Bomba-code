@@ -5,5 +5,6 @@ if (pressed){
 		header: "PASS",
 	};
 	send_data(_pass_packet);
+	// fix double click
 	instance_destroy()
 }
