@@ -19,11 +19,14 @@ if (room == rm_game) {
 	
 	//rejoin initialization
 	if (is_undefined(start_flip_card)) {	
+		//if landlord already picked
 		if (array_length(global.landlord_id) > 0){
 			cardhandler.bottom_flip();
 			namehandler.is_landlord[global.landlord_id[0]] = true;
 			if (global.landlord_id[1] == global.player_id) namehandler.is_landlord[global.player_id] = true;
+			if (array_length(global.landlord_id) > 1) cardhandler.draw_teammate(teammate_card);
 		}
+		
 		cardhandler.draw_cards(start_played_cards,false);
 		namehandler.update_exit_order(exit_order);
 	}

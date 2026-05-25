@@ -13,7 +13,12 @@ if (_type == network_type_data) {
     
     // 4. Act on the data
     if (_data.header == "PLAY_CARDS") { //combo[combo,rank, length, throwaways]
-        array_push(global.log, global.player_names[_data.sender] + " played " + global.combo_to_string[_data.combo[0]]);
+		var card_nums = "";
+		for (var i = 0; i < array_length(_data.cards); ++i) {
+			card_nums += global.val_to_string[_data.cards[i][0]];
+		}
+		
+        array_push(global.log, global.player_names[_data.sender] + " played " + global.combo_to_string[_data.combo[0]] + ": " + card_nums);
 		
 		for (var i = 0; i < array_length(cardhandler.played_cards); ++i){
 			instance_destroy(cardhandler.played_cards[i]);
@@ -102,6 +107,8 @@ if (_type == network_type_data) {
 		array_push(global.log, "3 " + global.suit_to_string[_data.teammate[1]] + " with "
 		+ global.back_to_string[_data.teammate[2]] + " back is the teammate");
 		toggle_button(global.turn,1);
+		cardhandler.draw_teammate(_data.teammate)
+		
 	}
 	else if (_data.header == "FOUND_TEAMMATE") {
 		array_push(global.landlord_id, _data.sender);
@@ -167,6 +174,7 @@ if (_type == network_type_data) {
 		
 		global.landlord_id = _data.landlord;
 		exit_order = _data.exit_order;
+		teammate_card = _data.teammate_card;
 		
 		// single nums
 		global.turn = _data.turn;

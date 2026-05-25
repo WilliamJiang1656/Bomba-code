@@ -21,6 +21,12 @@ y1 = room_height - (card_height * scale) - 16;
 x2 = room_width - x1;
 y2 = room_height - y1;
 
+//teammate card vars
+x1_ = room_width - (card_width * scale * 2) - 16
+y1_ = room_height - (card_height * scale * 2) - 24;
+x2_ = room_width - x1_;
+y2_ = room_height - y1_;
+
 
 draw_cards = function(arr, hand){
 	var amt = array_length(arr);
@@ -259,6 +265,25 @@ bottom_flip = function() {
 	}
 }
 
+draw_teammate = function(teammate_card) {
+	var x_pos = room_width-(card_width*scale*2)-8
+	var y_pos = room_height-card_height*scale*2-16
+	//number
+	var inst = instance_create_layer(x_pos, y_pos, "Front", ob_card, card_info);
+	inst.draw_card(teammate_card);
+	inst.bottom = true;
+	inst.image_xscale = scale;
+	inst.image_yscale = scale;
+	
+	//back
+	var inst2 = instance_create_layer(x_pos+card_width*scale, y_pos, "Front", ob_card, card_info);
+	inst2.draw_card(teammate_card);
+	inst2.toggle_flip();
+	inst2.bottom = true;
+	inst2.image_xscale = scale;
+	inst2.image_yscale = scale;
+}
+
 refresh_hand_display = function() {
 	for (var i = 0; i < array_length(cards); ++i){
 			instance_destroy(cards[i]);
@@ -299,7 +324,6 @@ if (global.player_id == flip_id){
 }
 
 // draw bottom
-
 var x_pos = room_width-(3*card_width*scale)-8
 var y_pos = room_height-card_height*scale-8
 for (var i = 0; i < 3; ++i) {
