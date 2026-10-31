@@ -7,7 +7,7 @@ if (pressed){
 	send_data(_pass_packet);
 	
 	// play sound
-	audio_play_sound(so_pass,100,0,2);
+	audio_play_sound(so_pass,100,0,1);
 	
 	// fix double click
 	instance_destroy()

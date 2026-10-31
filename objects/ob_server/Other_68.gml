@@ -153,14 +153,26 @@ if (_type == network_type_data) {
 		
 		array_push(global.log, global.player_names[_data.sender] + " exited");
 		if (landlord_points >= 5 || peasant_points >= 6){
+			var win = false
 			if (landlord_points >= 5) {
 				array_push(global.log, "Landlords win");
+				if (array_contains(global.landlord_id,global.player_id)) {
+					win = true;
+				}
 				room_goto(rm_lobby);
+				
 			}
 			else if (peasant_points >= 6) {
 				array_push(global.log, "Peasants win");
+				if (!array_contains(global.landlord_id,global.player_id)) {
+					win = true;
+				}
 				room_goto(rm_lobby);
 			}
+			
+			// play sound
+			if (win) audio_play_sound(so_victory,100,0,2);
+			else audio_play_sound(so_lose,100,0,2)
 		
 			var _lobby_packet = {
 		        header: "LOBBY",
