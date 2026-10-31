@@ -33,16 +33,16 @@ global.suit_to_string = [
 ]
 
 enum Combo {
-    NO_COMBO,
-    SINGLE,
-    PAIR,
-    TRIPLE,
-    BOMB,
-	QUAD,
-	ROCKET,
-	STRAIGHT,
-	CONSECUTIVE_PAIR,
-	FEIJI
+    NO_COMBO,//0
+    SINGLE,//1
+    PAIR,//2
+    TRIPLE,//3
+    BOMB,//4
+	QUAD,//5
+	ROCKET,//6
+	STRAIGHT,//7
+	CONSECUTIVE_PAIR,//8
+	FEIJI//9
 }
 
 global.combo_to_string = [

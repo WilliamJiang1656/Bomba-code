@@ -29,6 +29,9 @@ if (global.play_pressed) {
 		
 		hand_remove_selected();
 		refresh_hand_display();
+		
+		// play sound
+		audio_play_sound(so_play,100,0,2)
 	}
 
 }

@@ -5,6 +5,10 @@ if (pressed){
 		header: "PASS",
 	};
 	send_data(_pass_packet);
+	
+	// play sound
+	audio_play_sound(so_pass,100,0,2);
+	
 	// fix double click
 	instance_destroy()
 }

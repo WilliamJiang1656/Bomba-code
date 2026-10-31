@@ -12,7 +12,7 @@ if (_type == network_type_data) {
     var _data = json_parse(_json);
     
     // 4. Act on the data
-    if (_data.header == "PLAY_CARDS") { //combo[combo,rank, length, throwaways]
+    if (_data.header == "PLAY_CARDS") { //combo[combo, rank, length, throwaways]
 		var card_nums = "";
 		for (var i = 0; i < array_length(_data.cards); ++i) {
 			card_nums += global.val_to_string[_data.cards[i][0]];
@@ -44,6 +44,11 @@ if (_type == network_type_data) {
 		// code for next person's turn
 		global.turn = skip_exited(global.turn);
 		toggle_button(global.turn, 0);
+		
+		// play sounds
+		if (_data.combo[0] == Combo.BOMB || _data.combo[0] == Combo.ROCKET){
+			audio_play_sound(so_bomb,100,0,2)
+		}
 		
 		
     }

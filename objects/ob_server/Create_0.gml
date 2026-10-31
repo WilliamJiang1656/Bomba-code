@@ -44,6 +44,9 @@ toggle_button = function(turn, set) { //pass & play, play, pass & take
 		if (!instance_exists(take_button) && (set == 2)) {
             take_button = instance_create_layer(928, 416, "Instances", ob_take);
         }
+		
+		// play sound
+		audio_play_sound(so_turn,100,0,2)
     } else {
 		play_button = delete_button(play_button);
         pass_button = delete_button(pass_button);

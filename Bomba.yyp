@@ -12,6 +12,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
+    {"$GMFolder":"","%Name":"Sound","folderPath":"folders/Sound.yy","name":"Sound","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Object","folderPath":"folders/Object.yy","name":"Object","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"button","folderPath":"folders/Object/button.yy","name":"button","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprite","folderPath":"folders/Sprite.yy","name":"Sprite","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -51,6 +52,10 @@
     {"id":{"name":"sc_enums","path":"scripts/sc_enums/sc_enums.yy",},},
     {"id":{"name":"sc_resize","path":"scripts/sc_resize/sc_resize.yy",},},
     {"id":{"name":"sc_send_data","path":"scripts/sc_send_data/sc_send_data.yy",},},
+    {"id":{"name":"so_bomb","path":"sounds/so_bomb/so_bomb.yy",},},
+    {"id":{"name":"so_pass","path":"sounds/so_pass/so_pass.yy",},},
+    {"id":{"name":"so_play","path":"sounds/so_play/so_play.yy",},},
+    {"id":{"name":"so_turn","path":"sounds/so_turn/so_turn.yy",},},
     {"id":{"name":"sp_arrow","path":"sprites/sp_arrow/sp_arrow.yy",},},
     {"id":{"name":"sp_bj","path":"sprites/sp_bj/sp_bj.yy",},},
     {"id":{"name":"sp_blue","path":"sprites/sp_blue/sp_blue.yy",},},
