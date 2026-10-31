@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.7227891,
+  "duration":0.45696145,
   "exportDir":"",
   "name":"so_turn",
   "parent":{
