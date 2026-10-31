@@ -5,6 +5,7 @@ bottom = false
 orig_x = x;
 orig_y = y;
 hold_time = 10;
+group = false;
 
 draw_card = function(card) {
     val = card[0];

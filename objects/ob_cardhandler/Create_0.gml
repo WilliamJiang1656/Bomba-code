@@ -299,15 +299,20 @@ refresh_hand_display = function() {
 	hand_selected = [];
 	draw_cards(hand_sorted,true);
 	
+	count_cards_amt()
+	
+}
+
+count_cards_amt = function() {
 	// count cards amt
 	var cards_amt_group = 0
 	for (var i = 0; i < array_length(hand_groups); ++i) {
 		cards_amt_group += array_length(hand_groups[i])
 	}
 	cards_amt = cards_amt_group + array_length(hand)
-	
 }
 
+//main
 refresh_hand_display();
 
 if (global.player_id == flip_id){

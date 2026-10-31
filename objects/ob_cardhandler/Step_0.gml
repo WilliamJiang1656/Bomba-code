@@ -19,16 +19,18 @@ if (global.play_pressed) {
 
 	if (is_start_play || is_higher_value || bomb_over_normal || rocket_over_bomb || big_bomb_over_rocket || bigger_bomb_over_bomb) {
 		hand_selected = sort_cards(hand_selected, false);
+		var hand_selected_copy = array_create(array_length(hand_selected));
+		array_copy(hand_selected_copy, 0, hand_selected, 0, array_length(hand_selected));
+		
+		hand_remove_selected();
+		refresh_hand_display();
 		var _card_packet = {
 			header: "PLAY_CARDS",
-			cards: hand_selected,
+			cards: hand_selected_copy,
 			combo: combo,
 			cards_amt: cards_amt
 		};
 		send_data(_card_packet);
-		
-		hand_remove_selected();
-		refresh_hand_display();
 		
 		// play sound
 		audio_play_sound(so_play,100,0,2)
