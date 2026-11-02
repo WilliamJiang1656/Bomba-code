@@ -46,7 +46,7 @@ toggle_button = function(turn, set) { //pass & play, play, pass & take
         }
 		
 		// play sound
-		audio_play_sound(so_turn,100,0,2)
+		audio_play_sound(so_turn,100,0,1)
     } else {
 		play_button = delete_button(play_button);
         pass_button = delete_button(pass_button);

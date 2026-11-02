@@ -47,7 +47,7 @@ if (_type == network_type_data) {
 		
 		// play sounds
 		if (_data.combo[0] == Combo.BOMB || _data.combo[0] == Combo.ROCKET){
-			audio_play_sound(so_bomb,100,0,2)
+			audio_play_sound(so_bomb,100,0,1)
 		}
 		
 		
@@ -167,8 +167,8 @@ if (_type == network_type_data) {
 			}
 			
 			// play sound
-			if (win) audio_play_sound(so_victory,100,0,2);
-			else audio_play_sound(so_lose,100,0,2)
+			if (win) audio_play_sound(so_victory,100,0,1);
+			else audio_play_sound(so_lose,100,0,1)
 		
 			var _lobby_packet = {
 		        header: "LOBBY",

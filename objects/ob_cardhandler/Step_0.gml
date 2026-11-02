@@ -33,7 +33,7 @@ if (global.play_pressed) {
 		send_data(_card_packet);
 		
 		// play sound
-		audio_play_sound(so_play,100,0,2)
+		audio_play_sound(so_play,100,0)
 	}
 
 }
