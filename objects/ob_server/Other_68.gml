@@ -68,6 +68,13 @@ if (_type == network_type_data) {
 		else toggle_button(global.turn, 0);
 	}
 	else if (_data.header == "WELCOME") {
+		show_debug_message(_data.pfp)
+		//pfp loader
+		for (var i = 0; i<5; ++i){
+			pfp_info = {player: i, base64_string: _data.pfp[i]};
+			instance_create_layer(0,0,"Instances", ob_pfp_loader, pfp_info)
+		}
+		
         global.player_id = _data.assigned_id;
 		start = _data.start;
     }
@@ -94,12 +101,17 @@ if (_type == network_type_data) {
 
 	else if (_data.header == "NAME_UPDATE") {
 	    global.player_names[_data.sender] = _data.name;
+		//if object_exists(namehandler) namehandler.update_names();
 	}
 	else if (_data.header == "READY") {
 		if (_data.is_ready)
 			array_push(global.log, global.player_names[_data.sender] + " is ready!");
 		else 
 			array_push(global.log, global.player_names[_data.sender] + " unreadied");
+	}
+	else if (_data.header == "PFP") {
+		pfp_info = {player: _data.sender, base64_string: _data.pfp};
+		instance_create_layer(0,0,"Instances", ob_pfp_loader, pfp_info)
 	}
 	else if (_data.header == "LANDLORD") {
 		array_push(global.landlord_id, _data.sender);
@@ -188,6 +200,7 @@ if (_type == network_type_data) {
 		global.landlord_id = _data.landlord;
 		exit_order = _data.exit_order;
 		teammate_card = _data.teammate_card;
+		
 		
 		// single nums
 		global.turn = _data.turn;

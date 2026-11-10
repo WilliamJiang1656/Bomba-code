@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sc_resize",
   "parent":{
-    "name":"Bomba",
-    "path":"Bomba.yyp",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

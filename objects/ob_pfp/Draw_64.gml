@@ -1,9 +1,3 @@
-// 1. Make sure the surface exists before drawing it
-if (surface_exists(pfp_surface)) {
-    // Draw the surface at the object's x/y position
-    draw_surface(pfp_surface, x, y);
+if (variable_global_exists("pfp") && sprite_exists(global.pfp[global.player_id])) {
+    draw_sprite_stretched(global.pfp[global.player_id], 0, box_x, box_y, display_size, display_size);
 }
-
-// 2. Draw a border so you can see where the canvas is
-draw_set_color(c_white);
-draw_rectangle(x, y, x + canvas_size, y + canvas_size, true);

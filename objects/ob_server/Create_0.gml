@@ -12,6 +12,7 @@ global.turn = undefined;
 last_play_id = undefined;
 exit_order = [];
 global.landlord_id = [];
+global.pfp = [noone, noone, noone, noone, noone];
 landlord_phase = false;
 landlord_points = 0;
 peasant_points = 0;

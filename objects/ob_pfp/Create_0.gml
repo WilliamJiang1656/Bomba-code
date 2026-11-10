@@ -1,5 +1,7 @@
-// Size of the PFP (e.g., 64x64 or 128x128)
-canvas_size = 128;
-pfp_surface = -1; // Surfaces must be initialized to -1
-brush_color = c_white;
-brush_size = 4;
+pressed = false;
+display_size = 448;
+x_offset = 320;
+y_offset = 448;
+
+box_x = x-x_offset;
+box_y = y-y_offset;
