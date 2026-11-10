@@ -3,7 +3,7 @@
   "%Name":"HTML5",
   "ConfigValues":{
     "test":{
-      "option_html5_version":"1.0.0.11",
+      "option_html5_version":"1.0.0.12",
     },
   },
   "name":"HTML5",
