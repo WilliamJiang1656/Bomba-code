@@ -46,7 +46,6 @@
     {"id":{"name":"ob_server","path":"objects/ob_server/ob_server.yy",},},
     {"id":{"name":"ob_take","path":"objects/ob_take/ob_take.yy",},},
     {"id":{"name":"ob_teammate_select","path":"objects/ob_teammate_select/ob_teammate_select.yy",},},
-    {"id":{"name":"ob_test_pfps","path":"objects/ob_test_pfps/ob_test_pfps.yy",},},
     {"id":{"name":"ob_title","path":"objects/ob_title/ob_title.yy",},},
     {"id":{"name":"ob_ts_back","path":"objects/ob_ts_back/ob_ts_back.yy",},},
     {"id":{"name":"ob_ts_suit","path":"objects/ob_ts_suit/ob_ts_suit.yy",},},
