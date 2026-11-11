@@ -96,7 +96,7 @@ if (_type == network_type_data) {
 
 		case "NAME_UPDATE":
 		    global.player_names[_data.sender] = _data.name;
-			//if object_exists(namehandler) namehandler.update_names();
+			if (room == rm_game) namehandler.update_names();
 			break;
 
 		case "READY":

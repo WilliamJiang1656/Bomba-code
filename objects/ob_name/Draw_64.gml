@@ -19,7 +19,7 @@ for(var i = 0; i < 5; ++i) {
 	}
 	
 	if (exit_order[i] > 0) {
-		draw_sprite_ext(sp_white, 0, loc_pfp[0]-exit_size[i][0], loc_pfp[1], exit_size[i][0], exit_size[i][1], 0, c_black, 1);
-		draw_text_color(loc_pfp[0]-exit_size[i][0], loc_pfp[1], exit_order[i], c_white, c_white, c_white, c_white, 1);
+		draw_sprite_ext(sp_white, 0, loc_border[0]-exit_size[i][0], loc_border[1], exit_size[i][0], exit_size[i][1], 0, c_black, 1);
+		draw_text_color(loc_border[0]-exit_size[i][0], loc_border[1], exit_order[i], c_white, c_white, c_white, c_white, 1);
 	}
 }

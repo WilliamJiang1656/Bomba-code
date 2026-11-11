@@ -14,6 +14,8 @@ orig_y = 0;
 card_info = {cardhandler: id};
 cards_amt = 0
 
+min_margin = 230;
+
 //bottom card vars
 scale = 0.75;
 x1 = room_width - (card_width * scale * 3) - 16;
@@ -30,19 +32,26 @@ y2_ = room_height - y1_;
 
 draw_cards = function(arr, hand){
 	var amt = array_length(arr);
+	
 	var margin = (room_width-(amt*card_width))/2;
+	if (margin < min_margin) {
+	    margin = min_margin;
+	    card_space = (room_width-(2*margin))/amt;
+	}
+	else card_space = card_width;
+	
 	var y_pos = hand ? room_height-card_height-50 : room_height/3;
 	for (var i = 0; i < amt; ++i) {
 		if (hand) {
 			var col_len = array_length(arr[i]); 
 			for (var j = 0; j < col_len; ++j){
-				var inst = instance_create_layer(margin+card_width*i, y_pos-30*j, "Instances", ob_card, card_info);
+				var inst = instance_create_layer(margin+card_space*i, y_pos-25*j, "Instances", ob_card, card_info);
 				inst.draw_card(arr[i][j]);
 				array_push(cards, inst);
 			}
 		}
 		else {
-			var inst = instance_create_layer(margin+card_width*i, y_pos, "Instances", ob_card, card_info);
+			var inst = instance_create_layer(margin+card_space*i, y_pos, "Instances", ob_card, card_info);
 			inst.draw_card(arr[i]);
 			inst.placed = true;
 			array_push(played_cards, inst);
