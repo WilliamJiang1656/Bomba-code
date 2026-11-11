@@ -17,17 +17,9 @@ landlord_phase = false;
 landlord_points = 0;
 peasant_points = 0;
 
-// 2. Create the socket
 network_socket = network_create_socket(network_socket_wss);
-
-// 3. Set a timeout (give it 5 seconds to try)
 network_set_config(network_config_connect_timeout, 5000);
-
-// 4. IMPORTANT: The domain MUST NOT have any slashes or protocols
 var url = "previous-kinna-bombaboys-48c33a4c.koyeb.app"; 
-
-// 5. Use the RAW async connect
-// We use 443 because PieSocket proved that's where the WSS lives
 connect_id = network_connect_raw_async(network_socket, url, 443);
 
 play_button = noone;
